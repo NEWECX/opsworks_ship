@@ -15,7 +15,7 @@ module OpsworksShip
 
       @hipchat_auth_token = hipchat_auth_token
       @hipchat_room_id = hipchat_room_id
-      raise "Must supply both or neither hipchat params" if [@hipchat_auth_token, @hicphat_room_id].compact.size == 1
+      raise "Must supply both or neither hipchat params" if [@hipchat_auth_token, @hipchat_room_id].compact.size == 1
     end
 
     def syntax
