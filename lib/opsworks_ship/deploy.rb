@@ -169,7 +169,7 @@ module OpsworksShip
     end
 
     def relevant_app_layer_ids(stack_id)
-      stack_layers(stack_id).select{|l| l['Name'] =~ /#{@app_layer_name_regex}/i}.first['LayerId']
+      stack_layers(stack_id).select{|l| l['Name'] =~ /#{@app_layer_name_regex}/i}.map{|layer_data| layer_data['LayerId']}
     end
 
     def stack_layers(stack_id)
