@@ -2,7 +2,7 @@ require 'json'
 
 module OpsworksShip
   class Deploy
-    def initialize(stack_name, revision, app_type, app_layer_name_regex, hipchat_auth_token = nil, hipchat_room_id = nil)
+    def initialize(stack_name:, revision:, app_type:, app_layer_name_regex:, hipchat_auth_token: nil, hipchat_room_id: nil)
       @stack_name = stack_name
       raise "Invalid stack name, valid stacks are: #{all_stack_names}" unless all_stack_names.any?{|available_name| available_name == stack_name}
 

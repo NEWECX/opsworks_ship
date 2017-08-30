@@ -27,10 +27,7 @@ Create a script (probably in `bin/deploy`) similar to the following:
         gem 'opsworks_ship'
         require 'opsworks_ship/deploy'
         
-        initialize(stack_name, revision, app_type, app_layer_name_regex, hipchat_auth_token = nil, hipchat_room_id = nil)
-        
-        args = [ARGV[0], ARGV[1], 'rails', 'rails|sidekiq', 'abcde_this_is_a_token', 12345].compact
-        OpsworksShip::Deploy.new(*args).deploy
+        OpsworksShip::Deploy.new(stack_name: ARGV[0], revision: ARGV[1], app_type: 'rails', app_layer_name_regex: 'rails|sidekiq', hipchat_auth_token: 'my_hipchat_auth_token', hipchat_room_id: 12345).deploy
 
 ## Usage examples
 
