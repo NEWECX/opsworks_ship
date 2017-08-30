@@ -139,7 +139,7 @@ module OpsworksShip
       room_id = (@hipchat_room_id || ENV['HIPCHAT_ROOM_ID']).to_i
       auth_token = @hipchat_auth_token || ENV['HIPCHAT_AUTH_TOKEN']
 
-      return unless room_id > 0 && auth_token.present?
+      return unless room_id > 0 && auth_token
 
       post_data = {
         :name => "Deployments",
